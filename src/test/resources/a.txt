@@ -1,0 +1,40 @@
+curl -H 'Accept:application/json' http://localhost:8080/metadata/workflow
+curl -H 'Content-Type:application/json' -H 'Accept:application/json' -X POST http://localhost:8080/metadata/workflow/kitchensink2 -d '
+{
+  "name": "kitchensink2",
+  "description": "kitchensink workflow",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "task_01",
+      "taskReferenceName": "task_1",
+      "inputParameters": {
+        "mod": "${workflow.input.mod}",
+        "oddEven": "${workflow.input.oddEven}"
+      },
+      "type": "SIMPLE",
+      "decisionCases": {},
+      "defaultCase": [],
+      "forkTasks": [],
+      "startDelay": 0,
+      "joinOn": [],
+      "optional": false,
+      "defaultExclusiveJoinTask": [],
+      "asyncComplete": false,
+      "loopOver": []
+    }
+  ],
+  "inputParameters": [],
+  "outputParameters": {
+    "statues": "${get_es_1.output..status}",
+    "workflowIds": "${get_es_1.output..workflowId}"
+  },
+  "schemaVersion": 2,
+  "restartable": true,
+  "workflowStatusListenerEnabled": false,
+  "ownerEmail": "example@email.com",
+  "timeoutPolicy": "ALERT_ONLY",
+  "timeoutSeconds": 0,
+  "variables": {},
+  "inputTemplate": {}
+}'
