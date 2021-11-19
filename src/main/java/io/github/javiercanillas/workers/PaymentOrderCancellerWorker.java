@@ -4,7 +4,7 @@ import com.netflix.conductor.client.worker.Worker;
 import com.netflix.conductor.common.metadata.tasks.Task;
 import com.netflix.conductor.common.metadata.tasks.TaskResult;
 import io.github.javiercanillas.domain.ActionException;
-import io.github.javiercanillas.domain.PaymentOrderAuthorizer;
+import io.github.javiercanillas.domain.PaymentOrderCanceller;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -13,10 +13,10 @@ import org.springframework.stereotype.Component;
 public class PaymentOrderCancellerWorker implements Worker {
 
     public static final String TASK_DEF_NAME = "payment-order-canceller";
-    private final PaymentOrderAuthorizer collector;
+    private final PaymentOrderCanceller canceller;
 
-    public PaymentOrderCancellerWorker(PaymentOrderAuthorizer collector) {
-        this.collector = collector;
+    public PaymentOrderCancellerWorker(PaymentOrderCanceller canceller) {
+        this.canceller = canceller;
     }
 
     @Override
@@ -28,7 +28,7 @@ public class PaymentOrderCancellerWorker implements Worker {
     public TaskResult execute(Task task) {
         TaskResult taskResult;
         try {
-            final var result = this.collector.execute(task.getTaskId(), task.getInputData());
+            final var result = this.canceller.execute(task.getTaskId(), task.getInputData());
             taskResult = TaskResult.complete();
             result.forEach(taskResult::addOutputData);
             taskResult.addOutputData("result", "CONTINUE");

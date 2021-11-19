@@ -15,8 +15,8 @@ public class PaymentOrderAuthorizerWorker implements Worker {
     public static final String TASK_DEF_NAME = "payment-order-authorizer";
     private final PaymentOrderAuthorizer collector;
 
-    public PaymentOrderAuthorizerWorker(PaymentOrderAuthorizer collector) {
-        this.collector = collector;
+    public PaymentOrderAuthorizerWorker(PaymentOrderAuthorizer authorizer) {
+        this.collector = authorizer;
     }
 
     @Override

@@ -187,6 +187,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of("result"));
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
 
         taskDefinition = new TaskDef();
@@ -195,6 +196,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of("payment-authorizationId", "payment-transactionId"));
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
 
         taskDefinition = new TaskDef();
@@ -203,6 +205,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of("product-nsu"));
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
 
         taskDefinition = new TaskDef();
@@ -211,6 +214,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of());
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
 
         taskDefinition = new TaskDef();
@@ -219,6 +223,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of());
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
 
         taskDefinition = new TaskDef();
@@ -227,6 +232,7 @@ class WorkflowDefinitionTest {
         taskDefinition.setOwnerEmail("example@email.com");
         taskDefinition.setInputKeys(List.of("orderId"));
         taskDefinition.setOutputKeys(List.of());
+        taskDefinition.setConcurrentExecLimit(1000);
         registerTask(taskDefinition);
     }
 
