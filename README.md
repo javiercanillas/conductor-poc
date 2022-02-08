@@ -22,9 +22,9 @@ On another terminal, submit some orders to be processed:
 ```bash
 for i in {1..10}; do 
   # to submit to the workflow that uses workers
-  curl -H 'Content-Type:application/json' -H 'Accept:application/json' -X POST http://localhost:8081/order -d '{ "orderId": "1", "workflowDefinition": "Order-Worker-POC", "version": 1 }'
+  curl -H 'Content-Type:application/json' -H 'Accept:application/json' -X POST http://localhost:8080/order -d '{ "orderId": "1", "workflowDefinition": "Order-Worker-POC", "version": 1 }'
   # to submit to the workflow that uses http & event handlers
-  curl -H 'Content-Type:application/json' -H 'Accept:application/json' -X POST http://localhost:8081/order -d '{ "orderId": "1", "workflowDefinition": "Order-Event-POC", "version": 1 }' 
+  curl -H 'Content-Type:application/json' -H 'Accept:application/json' -X POST http://localhost:8080/order -d '{ "orderId": "1", "workflowDefinition": "Order-Event-POC", "version": 1 }' 
 done;
 ```
 
