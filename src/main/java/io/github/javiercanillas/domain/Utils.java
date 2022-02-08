@@ -1,4 +1,4 @@
-package io.github.javiercanillas.workers;
+package io.github.javiercanillas.domain;
 
 import java.io.IOException;
 import java.io.PrintWriter;

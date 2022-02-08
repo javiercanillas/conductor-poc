@@ -1,11 +1,10 @@
 package io.github.javiercanillas.rest.controllers;
 
 import com.netflix.conductor.client.http.WorkflowClient;
-import com.netflix.conductor.common.metadata.tasks.TaskResult;
 import com.netflix.conductor.common.metadata.workflow.StartWorkflowRequest;
 import io.github.javiercanillas.domain.ActionException;
 import io.github.javiercanillas.domain.FraudOrderChecker;
-import io.github.javiercanillas.workers.Utils;
+import io.github.javiercanillas.domain.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

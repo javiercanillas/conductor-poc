@@ -1,7 +1,5 @@
 package io.github.javiercanillas.domain;
 
-import com.netflix.conductor.common.metadata.tasks.TaskResult;
-import io.github.javiercanillas.workers.Utils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
